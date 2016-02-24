@@ -1,0 +1,433 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after {
+  content: "";
+  content: none; }
+
+q:before, q:after {
+  content: "";
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+.fl {
+  float: left; }
+
+.fr {
+  float: right; }
+
+.tc {
+  text-align: center; }
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden; }
+
+input, textarea {
+  font-family: "Open Sans", sans-serif; }
+
+input[type="submit"] {
+  cursor: pointer; }
+  input[type="submit"].btn {
+    background: #fdeb8a;
+    padding: 5px 10px;
+    border: none; }
+
+a.btn {
+  background: #fdeb8a;
+  padding: 5px 10px;
+  border: none;
+  margin: 10px 0;
+  display: inline-block; }
+
+.hidden {
+  display: none; }
+
+strong {
+  font-weight: bold; }
+
+table.standard {
+  font-size: 0.9em;
+  width: 100%; }
+  table.standard tbody tr:last-child {
+    border-bottom: none; }
+  table.standard tr {
+    border-bottom: 2px solid #b1b1b1; }
+    table.standard tr th {
+      font-weight: bold; }
+    table.standard tr th, table.standard tr td {
+      text-align: left;
+      padding: 5px; }
+      table.standard tr th:first-child, table.standard tr td:first-child {
+        padding-left: 0px; }
+      table.standard tr th:last-child, table.standard tr td:last-child {
+        padding-right: 0px;
+        border-right: none; }
+
+.toast-container {
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  text-align: center;
+  -webkit-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%); }
+  .toast-container .toast {
+    -webkit-transition: opacity 0.3s;
+    -o-transition: opacity 0.3s;
+    -ms-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+    background: #333333;
+    padding: 5px;
+    color: white;
+    font-size: 0.9em;
+    margin-bottom: 3px;
+    box-shadow: 0 0 3px #111111;
+    display: block; }
+
+.page-message {
+  width: 80%;
+  margin: 10px auto;
+  padding: 8px;
+  box-sizing: border-box; }
+  .page-message.success {
+    background: #69d29d; }
+  .page-message.error {
+    background: #f56060; }
+
+.sign-up-form input:not([type="submit"]) {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #b1b1b1;
+  box-sizing: border-box;
+  border-top: none; }
+  .sign-up-form input:not([type="submit"]):first-child {
+    border-top: 1px solid #b1b1b1; }
+  .sign-up-form input:not([type="submit"]):first-child {
+    margin-top: 10px; }
+.sign-up-form .sign-up-fields {
+  overflow: hidden; }
+  .sign-up-form .sign-up-fields.animate {
+    -webkit-transition: height 1s;
+    -o-transition: height 1s;
+    -ms-transition: height 1s;
+    transition: height 1s; }
+  .sign-up-form .sign-up-fields input:not([type="submit"]) {
+    margin-top: 0;
+    border-top: 0; }
+.sign-up-form input[type="submit"] {
+  width: 40%;
+  box-sizing: border-box;
+  padding: 10px 0;
+  display: inline-block;
+  margin: 10px 0;
+  border: none;
+  border-right: 3px solid #333333;
+  background: #69d29d;
+  font-weight: bold; }
+  .sign-up-form input[type="submit"]:last-child {
+    border-right: none;
+    background: #ccc35e; }
+
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #090909;
+  font-size: 11pt;
+  background: url("/images/subtlenet2.png"); }
+  body > header {
+    background: -moz-linear-gradient(0deg, #e6a838 0, #f7b53d 100%);
+    background: -webkit-gradient(linear, 0deg, color-stop(0, E6A838), color-stop(100%, F7B53D));
+    background: -webkit-linear-gradient(0deg, #e6a838 0, #f7b53d 100%);
+    background: -o-linear-gradient(0deg, #e6a838 0, #f7b53d 100%);
+    background: -ms-linear-gradient(0deg, #e6a838 0, #f7b53d 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1301FE', endColorstr='#F4F60C', GradientType='1');
+    background: linear-gradient(0deg, #e6a838 0, #f7b53d 100%);
+    height: 55px;
+    box-shadow: 0 0 3px #333333;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%; }
+    body > header:after {
+      content: ".";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+    body > header h1 {
+      line-height: 54px;
+      margin: 0 10px;
+      float: left;
+      font-weight: bold;
+      font-size: 1.1em; }
+      body > header h1 a {
+        color: #090909;
+        text-decoration: none; }
+    body > header .user-area {
+      float: right;
+      position: relative; }
+      body > header .user-area .user-btn {
+        width: 40px;
+        height: 40px;
+        background: #e2ca9f url("/images/user-menu-icon.png") no-repeat;
+        background-size: 32px;
+        border: 2px solid #292929;
+        border-radius: 50%;
+        background-position: center center;
+        position: relative;
+        top: 5px;
+        right: 10px;
+        cursor: pointer; }
+      body > header .user-area .user-menu {
+        position: absolute;
+        top: 35px;
+        right: 41px;
+        background: white;
+        box-sizing: border-box;
+        overflow: hidden;
+        z-index: 100; }
+        body > header .user-area .user-menu .inner-menu {
+          padding: 5px 10px;
+          border: 3px solid #eaeaea;
+          box-sizing: border-box; }
+        body > header .user-area .user-menu.animate {
+          -webkit-transition: height 0.2s, width 0.2s;
+          -o-transition: height 0.2s, width 0.2s;
+          -ms-transition: height 0.2s, width 0.2s;
+          transition: height 0.2s, width 0.2s; }
+        body > header .user-area .user-menu header {
+          text-align: right;
+          margin-bottom: 5px;
+          white-space: nowrap;
+          background: #f1c576;
+          padding: 6px 9px;
+          font-weight: bold; }
+        body > header .user-area .user-menu nav ul li {
+          background: #ffeac4; }
+          body > header .user-area .user-menu nav ul li a {
+            display: block;
+            text-decoration: none;
+            padding: 10px 5px;
+            color: #292929; }
+          body > header .user-area .user-menu nav ul li:nth-child(2n) {
+            background: #fff8eb; }
+  body > .content-area {
+    padding-top: 60px; }
+  body p {
+    margin: 15px 0; }
+  body .box a {
+    color: #292929;
+    font-weight: bold;
+    text-decoration: none; }
+  body .box.center {
+    width: 90%;
+    margin: 10px auto; }
+  body .box .inner-box {
+    padding: 10px; }
+    body .box .inner-box .challenge-status-banner {
+      text-align: center; }
+      body .box .inner-box .challenge-status-banner p {
+        font-size: 1.5em;
+        margin: 0; }
+      body .box .inner-box .challenge-status-banner .completed {
+        background: #95de7d;
+        padding: 10px; }
+      body .box .inner-box .challenge-status-banner .failed {
+        background: #e63838;
+        padding: 10px; }
+    body .box .inner-box > h2 {
+      font-size: 1.5em;
+      font-weight: bold;
+      margin-bottom: 10px; }
+    body .box .inner-box > h3 {
+      font-size: 1.2em;
+      font-weight: bold;
+      margin: 10px 0; }
+    body .box .inner-box > p:last-of-type {
+      margin-bottom: 0; }
+    body .box .inner-box .challenge-progress {
+      position: relative;
+      text-align: center;
+      height: 25px;
+      line-height: 25px;
+      background: white;
+      margin: 10px 0;
+      font-weight: bold;
+      font-size: 0.9em; }
+      body .box .inner-box .challenge-progress .progress-text {
+        z-index: 51;
+        position: relative; }
+      body .box .inner-box .challenge-progress .progress-bar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 0%;
+        background: #70cc52;
+        z-index: 50;
+        -webkit-transition: width 1s;
+        -o-transition: width 1s;
+        -ms-transition: width 1s;
+        transition: width 1s; }
+    body .box .inner-box .comment-area input.full-width {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 5px; }
+    body .box .inner-box .comment-area .comments {
+      margin-bottom: 20px; }
+      body .box .inner-box .comment-area .comments .comment {
+        padding: 10px 0;
+        border-bottom: 1px solid #aaaaaa; }
+        body .box .inner-box .comment-area .comments .comment:last-child {
+          border-bottom: none; }
+        body .box .inner-box .comment-area .comments .comment footer {
+          font-size: 0.8em; }
+        body .box .inner-box .comment-area .comments .comment header h5 {
+          font-weight: bold; }
+        body .box .inner-box .comment-area .comments .comment .reply-area {
+          padding-left: 35px;
+          margin-top: 10px; }
+          body .box .inner-box .comment-area .comments .comment .reply-area .comments {
+            margin-bottom: 5px; }
+            body .box .inner-box .comment-area .comments .comment .reply-area .comments .comment:last-child {
+              border-bottom: none; }
+          body .box .inner-box .comment-area .comments .comment .reply-area a {
+            margin-bottom: 5px;
+            font-size: 0.9em;
+            position: relative; }
+            body .box .inner-box .comment-area .comments .comment .reply-area a.reply-btn {
+              left: -35px; }
+  body .challenge-form {
+    margin-top: 10px; }
+    body .challenge-form input:not([type='checkbox']):not([type='submit']), body .challenge-form textarea {
+      width: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+      border: 1px solid #b1b1b1; }
+    body .challenge-form textarea {
+      margin-bottom: -2px; }
+    body .challenge-form label {
+      display: block;
+      margin-top: 5px; }
+    body .challenge-form label.checkbox {
+      margin: 10px 0;
+      display: block; }
+    body .challenge-form h3 {
+      margin-bottom: 5px;
+      font-size: 1.1em; }
+  body .item-list .item {
+    color: white;
+    border: 2px solid #111111;
+    border-bottom: none;
+    padding: 7px 10px;
+    background: #333333; }
+    body .item-list .item > a {
+      font-weight: normal;
+      display: block;
+      color: white; }
+      body .item-list .item > a:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden; }
+    body .item-list .item:last-of-type {
+      border-bottom: 2px solid #111111; }
+    body .item-list .item:after {
+      content: ".";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+    body .item-list .item .left {
+      float: left; }
+      body .item-list .item .left .sub-text {
+        font-size: 0.8em;
+        margin-top: 3px;
+        margin-bottom: 0; }
+    body .item-list .item .right {
+      float: right; }
+      body .item-list .item .right a.btn {
+        font-weight: normal;
+        padding: 2px 5px;
+        font-size: 0.8em;
+        color: white; }
+        body .item-list .item .right a.btn.btn-red {
+          background: #a22525; }
+        body .item-list .item .right a.btn.btn-green {
+          background: #357d35; }
+        body .item-list .item .right a.btn:last-child {
+          margin-right: 0; }
+  body .item-list.challenge-list .challenge.failed {
+    background: #8e2525; }
+  body .item-list.challenge-list .challenge.completed {
+    background: #3f6931; }
+  body .item-list.movie-list .movie[data-type="watched"] {
+    background: #3f6931; }
+  body .item-list.movie-list .movie .right .imdb-icon {
+    display: block;
+    width: 43px;
+    height: 24px;
+    background: url("/images/IMDb_icon.png") no-repeat;
+    background-size: 45px; }
+  body .item-list.user-list .user.challenge-completed {
+    background: #3f6931; }
+  body .movie-selector .search {
+    margin: 5px 0; }
+    body .movie-selector .search:after {
+      content: ".";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+    body .movie-selector .search input {
+      width: 100%;
+      float: left; }
+  body .movie-selector .selected-movies .movie {
+    background: #3f6931; }
+  body .movie-selector .search-results {
+    margin-bottom: 10px; }
+    body .movie-selector .search-results .movie {
+      background: #333333; }
+  body .user-selector .search {
+    margin: 5px 0; }
+    body .user-selector .search:after {
+      content: ".";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+    body .user-selector .search input {
+      width: 100%;
+      float: left; }
+  body .user-selector .selected-users .user {
+    background: #3f6931; }
+  body .user-selector .search-results {
+    margin-bottom: 10px; }
+    body .user-selector .search-results .user {
+      background: #333333; }

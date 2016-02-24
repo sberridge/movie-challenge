@@ -1,0 +1,97 @@
+.slider {
+	position: relative;
+}
+.slider-inner {
+	width: inherit;
+	height: inherit;
+	position: relative;
+	overflow: hidden;
+}
+.slider .item {
+	position: absolute;
+	height: inherit;
+	width: inherit;
+	top: 0;
+	display: none;
+}
+.slider .active {
+	display: block;
+	left: 0;
+	top: 0;
+	transition: left ease, top ease;
+	-webkit-transition: left ease, top ease;
+	-moz-transition: left ease, top ease;
+}
+.slider .item.left {
+	left: -100%;
+}
+.slider .item.right {
+	left: 100%;
+}
+.slider .top {
+	top: -100%;
+}
+.slider .bottom {
+	top: 100%;
+}
+.slider img {
+	height: inherit;
+	width: inherit;
+}
+.slider ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	top: 10px;
+	left: 50%;
+}
+.slider li {
+	float: left;
+	margin-right: 10px;
+	
+}
+.slider li:last-of-type {
+	margin-right: 0;
+}
+.slider a {
+	color: #fff;
+	text-decoration: none;
+}
+.slider .control, .slider ul {
+	opacity: 0;
+	transition: opacity 0.2s;
+	-webkit-transition: opacity 0.2s;
+	-moz-transition: opacity 0.2s;
+}
+.slider:hover .control, .slider:hover ul {
+	opacity: 1;
+}
+.slider .control {
+	position: absolute;
+	width: 20px;
+	text-align: center;
+	vertical-align: middle;
+	background: #333;
+	display: block;
+	border-radius: 5px;
+	border: 1px solid rgba(255,255,255,0.5);
+}
+.slider .control.left {
+	left: 10px;
+}
+.slider .control.right {
+	right: 10px;
+}
+.slider li a {
+	display: block;
+	width: 10px;
+	height: 10px;
+	border-radius: 5px;
+	background: #333;
+	text-indent: -9999px;
+	border: 1px solid rgba(255,255,255,0.5);
+}
+.slider li.current a {
+	background: #ccc;
+}

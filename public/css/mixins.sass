@@ -1,0 +1,40 @@
+@mixin clearfix()
+	content: "." 
+	display: block 
+	height: 0 
+	clear: both 
+	visibility: hidden
+
+@mixin keyframes($name)
+	@-webkit-keyframes #{$name}
+		@content
+	@-moz-keyframes #{$name}
+		@content
+	@-o-keyframes #{$name}
+		@content
+	@-ms-keyframes #{$name}
+		@content
+	@keyframes #{$name}
+		@content
+
+@mixin animation($animation...)
+	-webkit-animation: $animation
+	-o-animation: $animation
+	-ms-animation: $animation
+	animation: $animation
+
+@mixin transition($transition...)
+	-webkit-transition: $transition
+	-o-transition: $transition
+	-ms-transition: $transition
+	transition: $transition
+
+@mixin transform($transform...)
+	-webkit-transform: $transform
+	-o-transform: $transform
+	-ms-transform: $transform
+	transform: $transform
+
+@mixin backface-visibility($visibility...)
+	-webkit-backface-visibility: $visibility	
+	backface-visibility: $visibility

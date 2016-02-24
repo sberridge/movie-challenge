@@ -1,0 +1,46 @@
+<?php
+	define("ROOT",dirname(__FILE__));
+	include('shared/bootstrap.php');	
+	$args = $argv;
+
+	if(count($args) > 1) {
+		$action = $args[1];
+		if($action == 'test') {
+			DEFINE("TESTING",1);
+			file_put_contents(ROOT.'/storage/testing/session.txt',serialize(array()));
+			$path = ROOT.'/app/tests';
+			$testDir = opendir($path);
+			include(ROOT.'/app/tests/Testing.php');
+			while($file = readdir($testDir)) {
+				if(in_array($file,array(".","..","Testing.php"))) continue;
+				include($path."/".$file);
+				$class = str_replace(".php", "", $file);
+				$class = new $class;
+				$tests = get_class_methods($class);
+				foreach($tests as $test) {
+					echo "\nRunning test: ".$test."\n";
+					$class->$test();
+				}
+			}
+			file_put_contents(ROOT.'/storage/testing/session.txt',serialize(array()));
+		} elseif($action == 'migrate') {
+			if(isset($args[2])) {
+				switch($args[2]) {
+					case '--make':
+						lib\schema\Migrator::createMigration($args[3]);
+						break;
+					case '--revert':
+						lib\schema\Migrator::revert();
+						break;
+					case '--refresh':
+						lib\schema\Migrator::refresh();
+						break;
+				}
+			} else {
+				
+				lib\schema\Migrator::migrate();
+			}
+		}
+
+	}
+	
